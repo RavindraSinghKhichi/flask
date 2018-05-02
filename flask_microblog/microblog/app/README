@@ -1,0 +1,64 @@
+jinja2 learning
+#in template we have {{ variable }} which will be replaced with the values passed by us via render_template fucntion here.
+
+if statement syntax jinja2
+
+    {% ... %} = control statements given in these blocks are also supported by jinja2
+
+        {%if title%}
+            do something
+        {% else %}
+            do something
+        {% endif %}
+
+for syntax
+
+    {% for i in itterable %}
+
+        do something
+
+    {% endfor %}
+
+
+**********template inheritance***********
+
+every template of any website or app will have some common functionalities so this feature of jinja2 addresses this
+exactly same problem.so what we do in this is all the common func. are moved to a base file called as base.html and
+all other termplates will derive from this file
+
+base.html
+---------
+    common-func
+    {% block content %}{ endblock} #this is where child temps fit there data
+
+all the child temps will extend from base using extends.
+child temp1
+------------
+    {% extends base.html%}
+
+then will add there modifications to
+
+    {% block content %}modifications{% endblock%} #here is how they write there data.
+
+
+********Web Forms with FlaskWTF*****
+
+Flask configuration
+-------------------
+basic way
+1.)app.config['config_var']='value'
+
+from a file
+2.)app.config.from_pyfile('myconfig.cfg')
+
+object based
+
+app.config.from_object(Config)
+
+User login form 
+---------------
+The Flask-WTF extension uses Python classes to represent web forms. A form class simply defines the fields of the form as class variables.
+
+
+
+
